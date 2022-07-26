@@ -1,0 +1,17 @@
+{
+  "name": "cypresspractica",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open",
+    "test:headless": "cypress run",
+    "test:headless:Chrome": "cypress run --browser chrome"  
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.5.1"
+  }
+}
