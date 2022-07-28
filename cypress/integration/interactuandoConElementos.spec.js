@@ -160,13 +160,20 @@ describe('interactuando con elementos', ()=>{
         cy.contains('You selected Cancel').should('exist') 
 	})
 
-    it.only('Interactuando con tooltips', ()=>{
+    it('Interactuando con tooltips', ()=>{
        
         cy.visit('/tool-tips')
         cy.get('#toolTipButton').trigger('mouseover')
         cy.contains('You hovered over the Button').should('exist')
         cy.get('#toolTipButton').trigger('mouseout') //quita el mouse de encima
         cy.contains('You hovered over the Button').should('not.exist')
+	})
+
+    it.only('Interactuando con drag and drop', ()=>{
+       
+        cy.visit('/dragabble')
+        cy.get('#dragBox').trigger('mousedown',
+        {which:1,pageX:600,pageY:100}).trigger('mousemove',{which:1, pageX:600, pageY: 600}).trigger('mouseup')
 	})
 
 })
